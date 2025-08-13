@@ -6,7 +6,8 @@ import { PrismaClient } from './generated/prisma/index.js'
 const prisma = new PrismaClient()
 
 const app = express()
-app.use(cors({ origin: 'http://localhost:5173' })) // front origin
+/*app.use(cors({ origin: 'http://localhost:5173' })) // front origin */
+app.use(cors());
 app.use(express.json())
 
 //create user
