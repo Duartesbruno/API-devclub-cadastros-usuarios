@@ -6,8 +6,8 @@ import { PrismaClient } from './generated/prisma/index.js'
 const prisma = new PrismaClient()
 
 const app = express()
-/*app.use(cors({ origin: 'http://localhost:5173' })) // front origin */
-app.use(cors());
+/*app.use(cors({ origin: 'http://localhost:5173' })) // front origin local*/
+app.use(cors({ origin: 'https://devclub-cadastros-usuarios.vercel.app' })) // front origin vercel
 app.use(express.json())
 
 //create user
@@ -16,7 +16,7 @@ app.post('/usuarios', async (req, res) => {
     const { email, name, age } = req.body
     const ageNumber = parseInt(age, 10);
 
-    if (!email || !name || !age) {
+    if (!email || !name || isNaN(ageNumber)) {
       return res.status(400).json({ error: 'É obrigatório preencher todos os campos.' })
     }
 
@@ -55,8 +55,8 @@ app.get('/usuarios', async (req, res) => {
       where.email = email
     }
 
-    if (age) {
-      where.age = age
+    if (age && !isNaN(parseInt(age, 10))) {
+      where.age = parseInt(age, 10);
     }
 
     const users = await prisma.user.findMany({ where })
@@ -73,8 +73,9 @@ app.get('/usuarios', async (req, res) => {
 app.put('/usuarios/:id', async (req, res) => {
     try {
         const { email, name, age } = req.body
+        const ageNumber = parseInt(age, 10);
 
-        if (!email || !name || !age) {
+        if (!email || !name || isNaN(ageNumber)) {
           return res.status(400).json({ error: 'É obrigatório preencher todos os campos.' })
         }
         
