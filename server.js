@@ -7,7 +7,7 @@ const prisma = new PrismaClient()
 
 const app = express()
 /*app.use(cors({ origin: 'http://localhost:5173' })) // front origin local*/
-app.use(cors({ origin: 'https://devclub-cadastros-usuarios.vercel.app' })) // front origin vercel
+app.use(cors({ origin: 'https://devclub-cadastros-usuarios-lset1grm0-bruno-duartes-projects.vercel.app/' })) // front origin vercel
 app.use(express.json())
 
 //create user
