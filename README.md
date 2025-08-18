@@ -31,7 +31,7 @@ Criei com o objetivo de praticar integração com banco de dados, organização 
     - `PORT` **só é necessario colocar se você alterou a porta padrão**
 
 4. Para deploy no Render, configure no painel:
-- `DATABASE_URL=DATABASE_URL=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<database>?retryWrites=true&w=majority`
+- `DATABASE_URL=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<database>?retryWrites=true&w=majority`
 
 - `PRODUCTION_ORIGIN=https://your-production-url.com`
 
