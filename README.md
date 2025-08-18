@@ -14,7 +14,7 @@ Criei com o objetivo de praticar integração com banco de dados, organização 
 ## Pré-requisitos
 - Node.js;
 - npm;
-- Banco de dados (usado: MongoDB);
+- Banco de dados (MongoDB usado no projeto);
 - Opcional: Thunder Client (VS Code) ou Postman para testes.
 
 ## Configuração
@@ -26,9 +26,9 @@ Criei com o objetivo de praticar integração com banco de dados, organização 
 - Exemplo de `.env` local:
     - `DATABASE_URL=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<database>?retryWrites=true&w=majority`
 
-    - `LOCAL_ORIGIN` **só é necessario colocar se você alterou a porta padrão**
+    - `LOCAL_ORIGIN` **só é necessário colocar se você alterou a porta padrão**
 
-    - `PORT` **só é necessario colocar se você alterou a porta padrão**
+    - `PORT` **só é necessário colocar se você alterou a porta padrão**
 
 4. Para deploy no Render, configure no painel:
 - `DATABASE_URL=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<database>?retryWrites=true&w=majority`
@@ -52,7 +52,7 @@ Criei com o objetivo de praticar integração com banco de dados, organização 
 1. Configure o `.env`;
 2. Inicie o servidor: `npm start`;
 3. Teste com:
-- Front-end em `http://localhost:5173`(caso tenha mudado a porta padrão altere);
+- Abra o front-end em `http://localhost:5173`(ou a porta configurada);
 - Thunder Client (ex.: `GET http://localhost:3000/usuarios`) (caso tenha mudado a porta padrão altere);
 - Opcionalmente, front-end em produção, se `PRODUCTION_ORIGIN` for definida.
 
